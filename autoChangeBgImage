@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  //set default bgImg(could just set one in css)
+		$("#bg").css('background-image','url(img/bgimg/bg'+Math.floor(Math.random()*24+1)+'.jpg)');
+		//setTimeOut counts the time based on how long it is since last run, but setInterval doesnt
+		setInterval(function(){
+			var ran=Math.floor(Math.random()*24+1);//get 24 pics --> random [1,24]
+			$("#bg").fadeOut(4000,function(){
+				$(this).css('background-image','url(img/bgimg/bg'+ran+'.jpg)' ).fadeIn(2000);
+			});	
+		},12000);
+});
+		
